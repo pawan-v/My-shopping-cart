@@ -9,11 +9,47 @@ class CartItem extends React.Component {
       qty: 1,
       img: "",
     };
+    // this.testing();
   }
 
+  //   testing() {
+  //     const promise = new Promise((resolve, reject) => {
+  //       setTimeout(() => {
+  //         resolve("done");
+  //       }, 5000);
+  //     });
+
+  //     promise.then(() => {
+  //       this.setState({ qty: this.state.qty + 10 });
+  //       this.setState({ qty: this.state.qty + 10 });
+  //       this.setState({ qty: this.state.qty + 10 });
+  //     });
+  //   }
+
   increseQuantity = () => {
-    console.log("increse", this);
-  }
+    //  this.setState({
+    //     qty:this.state.qty + 1
+    // },() => {});
+
+    // form 2
+    this.setState((prevState) => {
+      return {
+        qty: prevState.qty + 1,
+      };
+    });
+  };
+
+  decreseQuantity = () => {
+    const { qty } = this.state;
+    if (qty === 0) {
+      return;
+    }
+    this.setState((prevState) => {
+      return {
+        qty: prevState.qty - 1,
+      };
+    });
+  };
 
   render() {
     // eslint-disable-next-line jsx-a11y/alt-text
@@ -34,12 +70,13 @@ class CartItem extends React.Component {
               alt="increase"
               className="action-icons"
               src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
-              onClick={this.increseQuantity.bind(this)}
+              onClick={this.increseQuantity}
             />
             <img
               alt="decrease"
               className="action-icons"
               src="https://cdn-icons-png.flaticon.com/512/992/992683.png"
+              onClick={this.decreseQuantity}
             />
             <img
               alt="delete"
