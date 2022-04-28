@@ -1,28 +1,27 @@
 import React from "react";
 
 class CartItem extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      price: 999,
+      title: "Phone",
+      qty: 1,
+      img: "",
+    };
+  }
 
-    constructor (){
-        super() ;
-        this.state = {
-            price : 999,
-            title:'Phone',
-            qty : 1,
-            img: ''
-        }
-    }
-
+  increseQuantity = () => {
+    console.log("increse", this);
+  }
 
   render() {
     // eslint-disable-next-line jsx-a11y/alt-text
     const newLocal_1 = <img style={styles.image} />;
-    const {prices , title, qty} = this.state ;
+    const { prices, title, qty } = this.state;
     const newLocal = newLocal_1;
 
-    
     return (
-
-
       <div className="cart-item">
         <div className="left-block">{newLocal}</div>
 
@@ -35,6 +34,7 @@ class CartItem extends React.Component {
               alt="increase"
               className="action-icons"
               src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
+              onClick={this.increseQuantity.bind(this)}
             />
             <img
               alt="decrease"
@@ -58,7 +58,7 @@ const styles = {
     height: 110,
     width: 110,
     borderRadius: 4,
-    backgroundColor:'#777'
+    backgroundColor: "#777",
   },
 };
 
