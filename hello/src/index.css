@@ -15,13 +15,15 @@ code {
 .cart-item {
   display: inline-flex;
   margin: 20px 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-item .right-block {
+.cart-item .right-block {
   padding: 0 20px;
 }
 
-.card-item-actions {
+.cart-item-actions {
   margin-top: 20px;
 }
 

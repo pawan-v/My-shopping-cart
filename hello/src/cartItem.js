@@ -4,7 +4,7 @@ class CartItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      price: 999,
+      prices: 999,
       title: "Phone",
       qty: 1,
       img: "",
@@ -41,7 +41,7 @@ class CartItem extends React.Component {
 
   decreseQuantity = () => {
     const { qty } = this.state;
-    if (qty === 0) {
+    if (qty === 1) {
       return;
     }
     this.setState((prevState) => {
@@ -63,7 +63,7 @@ class CartItem extends React.Component {
 
         <div className="right-block">
           <div style={{ fontSize: 25 }}>{title}</div>
-          <div style={{ color: "#777" }}>Rs {prices}</div>
+          <div style={{ color: "#777" }}>Rs : {prices}</div>
           <div style={{ color: "#777" }}>Qty : {qty}</div>
           <div className="cart-item-actions">
             <img
