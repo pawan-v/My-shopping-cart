@@ -16,8 +16,18 @@ const Cart = (props) => {
           />
         );
       })}
+      {/* <div style={styles.cartTotal}>Total : {props.total} </div> */}
     </div>
   );
 };
+
+
+// const styles = {
+//   cartTotal :{
+//     fontSize:'25px',
+//     paddingLeft:'20px',
+//     postition :'sticky'
+//   }
+// }
 
 export default Cart;

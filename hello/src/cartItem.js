@@ -2,15 +2,15 @@ import React from "react";
 
 const CartItem = (props) => {
   // eslint-disable-next-line jsx-a11y/alt-text
-  const newLocal_1 = <img style={styles.image} />;
-  const newLocal = newLocal_1;
 
   const { price, title, qty } = props.product;
   const { product, onIncreaseQty, onDecreaseQty, onDeleteProduct } = props;
 
   return (
     <div className="cart-item">
-      <div className="left-block">{newLocal}</div>
+      <div className="left-block">
+        <img alt="img" style={styles.image} src={product.img} />
+      </div>
 
       <div className="right-block">
         <div style={{ fontSize: 25 }}>{title}</div>
