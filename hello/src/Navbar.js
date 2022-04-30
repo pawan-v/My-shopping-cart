@@ -26,6 +26,7 @@ const styles = {
     // eslint-disable-next-line no-undef
     display: "flex",
     justifyContent: "flex-end",
+    paddingRight:"20px",
     alignItems: "center",
   },
   cartIconContainer: {
